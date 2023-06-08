@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MR. LAM\\source\\repos\\Petland Shop\\Petland Shop.csproj": {}
+    "C:\\Users\\MR. LAM\\OneDrive\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MR. LAM\\source\\repos\\Petland Shop\\Petland Shop.csproj": {
+    "C:\\Users\\MR. LAM\\OneDrive\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MR. LAM\\source\\repos\\Petland Shop\\Petland Shop.csproj",
+        "projectUniqueName": "C:\\Users\\MR. LAM\\OneDrive\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
         "projectName": "Petland Shop",
-        "projectPath": "C:\\Users\\MR. LAM\\source\\repos\\Petland Shop\\Petland Shop.csproj",
+        "projectPath": "C:\\Users\\MR. LAM\\OneDrive\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
         "packagesPath": "C:\\Users\\MR. LAM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MR. LAM\\source\\repos\\Petland Shop\\obj\\",
+        "outputPath": "C:\\Users\\MR. LAM\\OneDrive\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MR. LAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
