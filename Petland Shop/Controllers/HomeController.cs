@@ -11,6 +11,7 @@ namespace Petland_Shop.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            //Khanh da code o day
         }
 
         public IActionResult Index()
