@@ -19,6 +19,11 @@ namespace Petland_Shop.Controllers
             return View();
         }
 
+        public IActionResult Single_Product()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

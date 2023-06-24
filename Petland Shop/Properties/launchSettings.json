@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -10,20 +10,20 @@
   "profiles": {
     "Petland_Shop": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7231;http://localhost:5231",
+      "applicationUrl": "http://localhost:49787",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "hotReloadProfile": "aspnetcore",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "hotReloadProfile": "aspnetcore"
     }
   }
 }

@@ -9,65 +9,77 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Petland_Shop
 build_property.RootNamespace = Petland_Shop
-build_property.ProjectDir = C:\Users\KHANH\Downloads\Git\Website-Petland-Shop\Petland Shop\
+build_property.ProjectDir = /Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\KHANH\Downloads\Git\Website-Petland-Shop\Petland Shop
+build_property.MSBuildProjectDirectory = /Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_PartialView.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QYXJ0aWFsVmlldy5jc2h0bWw=
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_PartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19QYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Home/Single_Product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9TaW5nbGVfUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_FooterPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Gb290ZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_HeaderPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19IZWFkZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = b-btxzqurw9t
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/KHANH/Downloads/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-ec2lwtl06o
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-0nhddtzh5s
+
+[/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-v3ajdon3sa
