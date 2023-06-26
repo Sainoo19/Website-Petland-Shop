@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Petland Shop.csproj": {}
+    "C:\\Users\\KHANH\\Downloads\\Git\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj": {}
   },
   "projects": {
-    "/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Petland Shop.csproj": {
+    "C:\\Users\\KHANH\\Downloads\\Git\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Petland Shop.csproj",
+        "projectUniqueName": "C:\\Users\\KHANH\\Downloads\\Git\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
         "projectName": "Petland Shop",
-        "projectPath": "/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/Petland Shop.csproj",
-        "packagesPath": "/Users/tranthiyennhi/.nuget/packages/",
-        "outputPath": "/Users/tranthiyennhi/Documents/Đồ án LTUD 2/Git/Website-Petland-Shop/Petland Shop/obj/",
+        "projectPath": "C:\\Users\\KHANH\\Downloads\\Git\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
+        "packagesPath": "C:\\Users\\KHANH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KHANH\\Downloads\\Git\\Website-Petland-Shop\\Petland Shop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/tranthiyennhi/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\KHANH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/sdk/7.0.305/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -81,20 +83,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.19, 6.0.19]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[6.0.19, 6.0.19]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.19, 6.0.19]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -103,7 +91,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.305/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
