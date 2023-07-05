@@ -23,5 +23,20 @@ namespace Petland_Shop.Controllers
             if (product == null) return RedirectToAction("Index");
             return View(product);
         }
+
+        public IActionResult CheckOut()
+        {
+            return View();
+        }
+
+        public IActionResult Cart()
+        {
+            return View();
+        }
+
+        public IActionResult WishList()
+        {
+            return View();
+        }
     }
 }

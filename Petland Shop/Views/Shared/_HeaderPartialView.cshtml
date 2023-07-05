@@ -75,7 +75,7 @@
                                     </ul>
                                 </li>
                                 <li class="d-none d-md-block">
-                                    <a href="wishlist.html">
+                                    <a asp-controller="Product" asp-action="WishList">
                                         <i class="pe-7s-like"></i>
                                     </a>
                                 </li>
@@ -111,10 +111,7 @@
                             <nav class="main-nav">
                                 <ul>
                                     <li >
-                                        <a href="javascript:void(0)">
-                                            Home
-                                            
-                                        </a>
+                                        <a asp-controller="Home" asp-action="Index">Home</a>
                                         
                                     </li>
                                     <li>
@@ -181,6 +178,7 @@
                         </li>
                     </ul>
                 </div>
+                <!--Khong can nhung cu de yen BEGIN -->
                 <div class="offcanvas-menu_area">
                     <nav class="offcanvas-navigation">
                         <ul class="mobile-menu">
@@ -437,6 +435,7 @@
                         </ul>
                     </nav>
                 </div>
+                <!--Khong can nhung cu de yen END -->
             </div>
         </div>
     </div>
@@ -507,8 +506,8 @@
                 <span class="ammount">$240.00</span>
             </div>
             <div class="group-btn_wrap d-grid gap-2">
-                <a href="cart.html" class="btn btn-secondary btn-primary-hover">View Cart</a>
-                <a href="checkout.html" class="btn btn-secondary btn-primary-hover">Checkout</a>
+                <a asp-controller="Product" asp-action="Cart" class="btn btn-secondary btn-primary-hover">View Cart</a>
+                <a asp-controller="Product" asp-action="CheckOut" class="btn btn-secondary btn-primary-hover">Checkout</a>
             </div>
         </div>
     </div>
