@@ -15,6 +15,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/AdminRoles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/AdminRoles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/AdminRoles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/AdminRoles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/AdminRoles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5Sb2xlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -39,6 +59,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Account/MyAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeUFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Account/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -47,8 +87,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Product/Cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDYXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Product/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDaGVja091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Product/WishList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxXaXNoTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Shared/_FooterPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Shared/_HeaderPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MR. LAM/OneDrive - VLG/Documents/Ky Thuat Phan Mem/Website-Petland-Shop/Petland Shop/Views/Shared/_ValidationScriptsPartial.cshtml]
