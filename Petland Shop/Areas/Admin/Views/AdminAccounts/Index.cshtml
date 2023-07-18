@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Petland_Shop.Models.Account>
+
+@{
+    ViewData["Account"] = "Account";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card-body" style="margin-bottom: 25px;">
+    <a style="margin-bottom: 25px;" class="btn btn-primary" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Create">Create</a>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">RoleName</label>
+        <select class="form-select" id="idrole" name="idrole" asp-items="ViewBag.Role">
+            
+            <option value="" disabled selected>Choose Role</option>
+
+        </select>
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">Status</label>
+        <select class="form-select" id="inputGroupSelect01" asp-items="ViewBag.IsTrangThai">
+
+            <option value="" disabled selected>Choose Status</option>
+
+        </select>
+    </div>
+    <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+        <div class="dataTable-top"><div class="dataTable-dropdown"><select class="dataTable-selector form-select"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select><label>entries per page</label></div><div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div></div><div class="dataTable-container">
+            <table class="table table-striped dataTable-table" id="table1">
+                <thead>
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AccountId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Password)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Salt)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Active)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FullName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastLogin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CreateDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Role.RoleName)
+                        </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.AccountId</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Email</td>
+                                <td>@item.Password</td>
+                                <td>@item.Salt</td>
+                                <td>
+                                    @if (@item.Active)
+                                    {
+                                        <div>Active</div>
+                                    }
+                                    else
+                                    {
+                                        <div>Block</div>
+                                    }  
+                                </td>
+                                <td>@item.FullName</td>
+                                <td>@item.LastLogin</td>
+                                <td>@item.CreateDate</td>
+                                <td>@item.Role.RoleName</td>
+                                <td>
+                                    <div class="btn-group mb-3" role="group" aria-label="Basic example">
+                                        <a type="button" class="btn btn-success" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Details" asp-route-id="@item.AccountId">View</a>
+                                        <a type="button" class="btn btn-warning" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Edit" asp-route-id="@item.AccountId">Edit</a>
+                                        <a type="button" class="btn btn-danger" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Delete" asp-route-id="@item.AccountId">Delete</a>
+                                        @*<button type="button" class="btn btn-success"></button>
+                                <button type="button" class="btn btn-warning"></button>
+                                <button type="button" class="btn btn-danger"></button>*@
+                                    </div>
+                                </td>
+                                @*<td>Remote</td>
+                        <td>Austin,Texas</td>
+                        <td><a href="#"><i class="badge-circle badge-circle-light-secondary font-medium-1" data-feather="mail"></i></a></td>*@
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div><div class="dataTable-bottom"><div class="dataTable-info">Showing 1 to 10 of 26 entries</div><ul class="pagination pagination-primary float-end dataTable-pagination"><li class="page-item pager"><a href="#" class="page-link" data-page="1">‹</a></li><li class="page-item active"><a href="#" class="page-link" data-page="1">1</a></li><li class="page-item"><a href="#" class="page-link" data-page="2">2</a></li><li class="page-item"><a href="#" class="page-link" data-page="3">3</a></li><li class="page-item pager"><a href="#" class="page-link" data-page="2">›</a></li></ul></div>
+    </div>
+</div>
+
+

@@ -30,6 +30,14 @@
                 </li>
 
                 <li class="sidebar-item  ">
+                    <a class='sidebar-link' asp-controller="AdminCustomers" asp-action="Index">
+                        <i class="bi bi-stack"></i>
+                        <span>Quản Lý Khách Hàng</span>
+                    </a>
+
+                </li>
+
+                <li class="sidebar-item  ">
                     <a class='sidebar-link' asp-controller="AdminProducts" asp-action="Index">
                         <i class="bi bi-collection-fill"></i>
                         <span >Quản Lý Sản Phẩm</span>
@@ -44,13 +52,13 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="extra-component-avatar.html">Quản Lý Danh Mục Sản Phẩm</a>
+                            <a asp-area="Admin" asp-controller="AdminCategories" asp-action="Index">Quản Lý Danh Mục Sản Phẩm</a>
                         </li>
                         <li class="submenu-item ">
                             <a asp-area="Admin" asp-controller="AdminRoles" asp-action="Index" >Quản Lý Quyền Truy Cập</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="extra-component-sweetalert.html">Quản Lý Tài Khoản</a>
+                            <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index">Quản Lý Tài Khoản</a>
                         </li>
                     </ul>
                 </li>
