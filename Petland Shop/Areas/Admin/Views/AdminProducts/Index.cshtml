@@ -1,78 +1,28 @@
-﻿@model IEnumerable<Petland_Shop.Models.Product>
+﻿
+@using PagedList.Core.Mvc
+
+@model PagedList.Core.IPagedList<Petland_Shop.Models.Product>
 
 @{
+    int CurrentPage = ViewBag.CurrentPage;
     ViewData["Product"] = "Product";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+
 <div class="card-body">
     <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminProducts" asp-action="Create">Create</a>
     <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
         <div class="dataTable-top"><div class="dataTable-dropdown"><select class="dataTable-selector form-select"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option></select><label>entries per page</label></div><div class="dataTable-search"><input class="dataTable-input" placeholder="Search..." type="text"></div></div><div class="dataTable-container">
             <table class="table table-striped dataTable-table" id="table1">
                 <thead>
-               
                     <tr>
-                    <th data-sortable="" style="width: 33.4601%;" class="asc">
-                            @Html.DisplayNameFor(model => model.ProductId)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ProductName)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ShortDesc)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Description)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Price)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Discount)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Thumb)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Video)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DateCreated)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DateModified)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.BestSellers)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.HomeFlag)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Active)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Tags)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Title)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Alias)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.MetaDesc)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.MetaKey)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.UnitsInStock)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Cat)
-                        </th>
-                        <th> </th>
+                        <th>ProductId</th>
+                        <th>ProductName</th>
+                        <th>Price</th>
+                        <th>UnitsInStock</th>
+                        <th>Cat</th>
+                        <th>Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,24 +33,23 @@
                             <tr>
                                 <td>@item.ProductId</td>
                                 <td>@item.ProductName</td>
-                                <td>@item.ShortDesc</td>
-                                <td>@item.Description</td>
-                                <td>@item.Price</td>
-                                <td>@item.Discount</td>
-                                <td>@item.Thumb</td>
-                                <td>@item.Video</td>
-                                <td>@item.DateCreated</td>
-                                <td>@item.DateModified</td>
-                                <td>@item.BestSellers</td>
-                                <td>@item.HomeFlag</td>
-                                <td>@item.Active</td>
-                                <td>@item.Tags</td>
-                                <td>@item.Title</td>
-                                <td>@item.Alias</td>
-                                <td>@item.MetaDesc</td>
-                                <td>@item.MetaKey</td>
+                               
+                                <td>@item.Price.Value.ToString("#,##0") VND</td>
+                                
+                                
+                               
                                 <td>@item.UnitsInStock</td>
-                                <td>@item.Cat</td>
+                                <td>@item.Cat.CatName</td>
+                                
+                                <td>
+                                    @if (item.UnitsInStock.Value > 0)
+                                    {
+                                       <div>In Stock</div>
+                                   }else{
+                                        <div>Out Stock</div>
+                                   }
+                                    
+                                </td>
                                 <td>
                                     <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                         <a type="button" class="btn btn-success" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId">View</a>
@@ -117,7 +66,13 @@
                    
                 </tbody>
             </table>
-        </div><div class="dataTable-bottom"><div class="dataTable-info">Showing 1 to 10 of 26 entries</div><ul class="pagination pagination-primary float-end dataTable-pagination"><li class="page-item pager"><a href="#" class="page-link" data-page="1">‹</a></li><li class="page-item active"><a href="#" class="page-link" data-page="1">1</a></li><li class="page-item"><a href="#" class="page-link" data-page="2">2</a></li><li class="page-item"><a href="#" class="page-link" data-page="3">3</a></li><li class="page-item pager"><a href="#" class="page-link" data-page="2">›</a></li></ul></div>
+            <div aria-label="Page navigation example">
+                <ul class="pagination">
+                    <pager class="pager-contaner" list="@Model" asp-area="Admin" asp-controller="AdminCustomers" asp-action="Index" />
+                </ul>
+
+            </div>
+        </div>
     </div>
 </div>
 
