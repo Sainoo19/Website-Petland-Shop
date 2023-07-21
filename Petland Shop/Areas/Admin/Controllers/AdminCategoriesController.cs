@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PagedList.Core;
 using Petland_Shop.Models;
 
 namespace Petland_Shop.Areas.Admin.Controllers
@@ -20,11 +21,17 @@ namespace Petland_Shop.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminCategories
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? page)
         {
-              return _context.Categories != null ? 
-                          View(await _context.Categories.ToListAsync()) :
-                          Problem("Entity set 'DbMarketsContext.Categories'  is null.");
+            var pageNumber = page == null || page <= 0 ? 1 : page.Value;
+            var pageSize = 20;
+            var lsCategorys = _context.Categories
+                .AsNoTracking()
+                .OrderBy(x => x.CatId);
+            PagedList<Category> models = new PagedList<Category>(lsCategorys, pageNumber, pageSize);
+
+            ViewBag.CurrentPage = pageNumber;
+            return View(models);
         }
 
         // GET: Admin/AdminCategories/Details/5

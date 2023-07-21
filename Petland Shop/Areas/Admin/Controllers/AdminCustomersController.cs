@@ -23,10 +23,13 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminCustomers
         public IActionResult Index(int? page)
         {
-            var pageNumber = page == null || page < 0 ? 1 : page.Value;
+            var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var pageSize = 20;
-            var IsCustomer = _context.Customers.AsNoTracking().OrderByDescending(x => x.CustomerId);
-            PagedList<Customer> models = new PagedList<Customer>(IsCustomer, pageNumber, pageSize);
+            var lsCustomers = _context.Customers
+                .AsNoTracking()
+                .OrderByDescending(x => x.CreateDate);
+            PagedList<Customer> models = new PagedList<Customer>(lsCustomers, pageNumber, pageSize);
+
             ViewBag.CurrentPage = pageNumber;
             return View(models);
 
