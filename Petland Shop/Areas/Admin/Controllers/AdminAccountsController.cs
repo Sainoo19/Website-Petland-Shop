@@ -23,11 +23,14 @@ namespace Petland_Shop.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
 
-            ViewData["Role"] = new SelectList(_context.Roles, "RoleId", "Description");
-            List<SelectListItem> IsTrangThai = new List<SelectListItem>();
-            IsTrangThai.Add(new SelectListItem() { Text = "Active", Value = "1" });
-            IsTrangThai.Add(new SelectListItem() { Text = "Block", Value = "0" });
-            ViewData["IsTrangThai"] = IsTrangThai;
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "Description");
+            List<SelectListItem> lsTrangThai = new List<SelectListItem>();
+            lsTrangThai.Add(new SelectListItem() { Text = "Hoạt động", Value = "1" });
+            lsTrangThai.Add(new SelectListItem() { Text = "Khóa", Value = "0" });
+            ViewData["lsTrangThai"] = lsTrangThai;
+
+
+
             var dbMarketsContext = _context.Accounts.Include(a => a.Role);
             return View(await dbMarketsContext.ToListAsync());
         }
