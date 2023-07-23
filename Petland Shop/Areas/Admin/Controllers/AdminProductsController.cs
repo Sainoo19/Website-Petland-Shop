@@ -13,6 +13,7 @@ using PagedList.Core;
 using Petland_Shop.Helpper;
 using Petland_Shop.Models;
 
+
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -113,7 +114,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
                     string image = Utilities.SEOUrl(product.ProductName) + extension;
                     product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
                 }
-                //if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "default.jpg";
+                if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "/images/products/default.png";
                 product.Alias = Utilities.SEOUrl(product.ProductName);
                 product.DateModified = DateTime.Now;
                 product.DateCreated = DateTime.Now;
@@ -164,24 +165,22 @@ namespace Petland_Shop.Areas.Admin.Controllers
                 try
                 {
                     product.ProductName = Utilities.ToTitleCase(product.ProductName);
-                    string extension = Path.GetExtension(fThumb.FileName);
-                    string image = Utilities.SEOUrl(product.ProductName) + extension;
-                    product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
-                    //if (fThumb = null)
-                    //{
-                    //    string extension = Path.GetExtension(fThumb.FileName);
-                    //    string image = Utilities.SEOUrl(product.ProductName) + extension;
-                    //    product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
-                    //}
-                    //if (string.IsNullOrEmpty(product.Thumb)) 
-                    //{ 
-                    //    ViewBag.PreviousThumbUrl = "/images/products/" + product.Thumb; 
-                    //}
-                    //else
-                    //{
-                    //    // Đặt một hình ảnh mặc định (nếu muốn)
-                    //    ViewBag.PreviousThumbUrl = "/images/products/default.png"; // Đường dẫn tương đối đến hình ảnh mặc định trong thư mục "images"
-                    //}
+
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string image = Utilities.SEOUrl(product.ProductName) + extension;
+                        product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(product.Thumb))
+                    {
+                        ViewBag.PreviousThumbUrl = "/images/products/" + product.Thumb;
+                    }
+                    else
+                    {
+                        // Đặt một hình ảnh mặc định (nếu muốn)
+                        ViewBag.PreviousThumbUrl = "/images/products/default.png"; // Đường dẫn tương đối đến hình ảnh mặc định trong thư mục "images"
+                    }
 
                     product.Alias = Utilities.SEOUrl(product.ProductName);
                     product.DateModified = DateTime.Now;
