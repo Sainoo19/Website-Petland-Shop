@@ -8,19 +8,17 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PagedList.Core;
 using Petland_Shop.Helpper;
 using Petland_Shop.Models;
 
-
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize]
     public class AdminProductsController : Controller
     {
         private readonly DbMarketsContext _context;
-
         public INotyfService _notyfService { get; }
         public AdminProductsController(DbMarketsContext context, INotyfService notyfService)
         {
@@ -55,13 +53,13 @@ namespace Petland_Shop.Areas.Admin.Controllers
 
             PagedList<Product> models = new PagedList<Product>(lsProducts.AsQueryable(), pageNumber, pageSize);
             ViewBag.CurrentCateID = CatID;
+
             ViewBag.CurrentPage = pageNumber;
 
             ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
+
             return View(models);
-
         }
-
         public IActionResult Filtter(int CatID = 0)
         {
             var url = $"/Admin/AdminProducts?CatID={CatID}";
@@ -75,7 +73,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminProducts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -145,8 +143,6 @@ namespace Petland_Shop.Areas.Admin.Controllers
             return View(product);
         }
 
-
-
         // POST: Admin/AdminProducts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -170,7 +166,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
                         string image = Utilities.SEOUrl(product.ProductName) + extension;
                         product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
                     }
-                    if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "default.jpg";
+                    if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "/images/products/default.png";
                     product.Alias = Utilities.SEOUrl(product.ProductName);
                     product.DateModified = DateTime.Now;
 
@@ -198,7 +194,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminProducts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -219,23 +215,16 @@ namespace Petland_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Products == null)
-            {
-                return Problem("Entity set 'DbMarketsContext.Products'  is null.");
-            }
             var product = await _context.Products.FindAsync(id);
-            if (product != null)
-            {
-                _context.Products.Remove(product);
-            }
-            
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-          return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+            return _context.Products.Any(e => e.ProductId == id);
         }
     }
 }

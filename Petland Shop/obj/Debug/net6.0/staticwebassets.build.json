@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DZguP4BOMQAZu4mVbEA2encJVLhU+ncC38ygC4SKWMg=",
+  "Hash": "hcN4Cfy7+gppNQZwAe71tw/YEVRDvka32Mbtps91DSE=",
   "Source": "Petland Shop",
   "BasePath": "_content/Petland Shop",
   "Mode": "Default",
@@ -42651,6 +42651,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\default.png"
+    },
+    {
+      "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\demo.jfif",
+      "SourceId": "Petland Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\",
+      "BasePath": "_content/Petland Shop",
+      "RelativePath": "images/products/demo.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\demo.jfif"
     },
     {
       "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\hat-cho-meo-whiskas-1kg.jfif",

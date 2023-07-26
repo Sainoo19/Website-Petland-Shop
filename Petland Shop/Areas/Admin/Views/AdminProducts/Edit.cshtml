@@ -8,10 +8,7 @@
     <link href="~/Adminassets/summernote/summernote-bs4.css" rel="stylesheet" />
     <link href="~/Adminassets/summernote/summernote.css" rel="stylesheet" />
 }
-@if (ViewBag.PreviousThumbUrl != null)
-{
-    <img src="@ViewBag.PreviousThumbUrl" alt="Previous Thumb" />
-}
+
     <form asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@Model.ProductId" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input type="hidden" asp-for="ProductId" />
@@ -74,7 +71,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="font-weight-semibold" for="productThumb">Ảnh đại diện</label>
+                            <label class="font-weight-semibold" for="productBrand">Ảnh đại diện</label>
                             <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
                             <span asp-validation-for="Thumb" class="text-danger"></span>
                         </div>
@@ -147,7 +144,6 @@
     <script src="~/Adminassets/js/pages/e-commerce-product-edit.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
     <script src="~/Adminassets/summernote/summernote-bs4.js"></script>
-    <img src="~/images/products/default.png" />
 
     <script>
         jQuery(document).ready(function () {
