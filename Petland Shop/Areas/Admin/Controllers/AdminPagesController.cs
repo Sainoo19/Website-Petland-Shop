@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
+using Petland_Shop.Helpper;
 using Petland_Shop.Models;
+
 
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize]
     public class AdminPagesController : Controller
     {
         private readonly DbMarketsContext _context;
-
-        public AdminPagesController(DbMarketsContext context)
+        public INotyfService _notyfService { get; }
+        public AdminPagesController(DbMarketsContext context, INotyfService notyfService)
         {
             _context = context;
+            _notyfService = notyfService;
         }
 
         // GET: Admin/AdminPages
@@ -37,7 +44,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminPages/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Pages == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -63,12 +70,22 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page)
+        public async Task<IActionResult> Create([Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string imageName = Utilities.SEOUrl(page.PageName) + extension;
+                    page.Thumb = await Utilities.UploadFile(fThumb, @"pages", imageName.ToLower());
+                }
+                if (string.IsNullOrEmpty(page.Thumb)) page.Thumb = "default.jpg";
+                page.Alias = Utilities.SEOUrl(page.PageName);
                 _context.Add(page);
                 await _context.SaveChangesAsync();
+                _notyfService.Success("Thêm mới thành công");
                 return RedirectToAction(nameof(Index));
             }
             return View(page);
@@ -77,7 +94,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminPages/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Pages == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -95,7 +112,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page)
+        public async Task<IActionResult> Edit(int id, [Bind("PageId,PageName,Contents,Thumb,Published,Title,MetaDesc,MetaKey,Alias,CreatedDate,Ordering")] Page page, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (id != page.PageId)
             {
@@ -106,8 +123,17 @@ namespace Petland_Shop.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string imageName = Utilities.SEOUrl(page.PageName) + extension;
+                        page.Thumb = await Utilities.UploadFile(fThumb, @"pages", imageName.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(page.Thumb)) page.Thumb = "default.jpg";
+                    page.Alias = Utilities.SEOUrl(page.PageName);
                     _context.Update(page);
                     await _context.SaveChangesAsync();
+                    _notyfService.Success("Cập nhật thành công");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -128,7 +154,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminPages/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Pages == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -148,23 +174,16 @@ namespace Petland_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Pages == null)
-            {
-                return Problem("Entity set 'DbMarketsContext.Pages'  is null.");
-            }
             var page = await _context.Pages.FindAsync(id);
-            if (page != null)
-            {
-                _context.Pages.Remove(page);
-            }
-            
+            _context.Pages.Remove(page);
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 
         private bool PageExists(int id)
         {
-          return (_context.Pages?.Any(e => e.PageId == id)).GetValueOrDefault();
+            return _context.Pages.Any(e => e.PageId == id);
         }
     }
 }

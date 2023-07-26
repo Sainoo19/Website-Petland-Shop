@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Harmic - Home Two</title>
+    <title>@ViewData["Title"]</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,21 +27,22 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css">
-	<link href="~/assets/css/style.min.css" rel="stylesheet" />
-	<link href="~/assets/css/style.css" rel="stylesheet" />
+
 </head>
 
 <body>
 
     <div class="main-wrapper">
 
+        <!-- Begin Main Header Area -->
         @await Html.PartialAsync("_HeaderPartialView.cshtml")
+        <!-- Main Header Area End Here -->
+        @RenderBody()
 
 
-       @RenderBody()
-
-       @await Html.PartialAsync("_FooterPartialView.cshtml")
-      
+        <!-- Begin Footer Area -->
+        @await Html.PartialAsync("_FooterPartialView.cshtml")
+        <!-- Footer Area End Here -->
         <!-- Begin Scroll To Top -->
         <a class="scroll-to-top" href="">
             <i class="fa fa-chevron-up"></i>
@@ -72,7 +73,8 @@
     <!--Main JS (Common Activation Codes)-->
     <script src="~/assets/js/main.js"></script>
     @await Component.InvokeAsync("Notyf")
-    @await RenderSectionAsync("Script",required : false);
+    @await RenderSectionAsync("Scripts", required:false)
+    @await RenderSectionAsync("Styles", required: false)
 </body>
 
 </html>

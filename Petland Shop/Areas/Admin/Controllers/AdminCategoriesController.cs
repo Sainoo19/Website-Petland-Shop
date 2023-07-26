@@ -1,23 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
+using Petland_Shop.Helpper;
 using Petland_Shop.Models;
+
 
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize]
     public class AdminCategoriesController : Controller
     {
         private readonly DbMarketsContext _context;
-
-        public AdminCategoriesController(DbMarketsContext context)
+        public INotyfService _notyfService { get; }
+        public AdminCategoriesController(DbMarketsContext context, INotyfService notyfService)
         {
             _context = context;
+            _notyfService = notyfService;
         }
 
         // GET: Admin/AdminCategories
@@ -37,7 +44,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminCategories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -77,7 +84,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminCategories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -128,7 +135,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminCategories/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Categories == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -148,23 +155,16 @@ namespace Petland_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Categories == null)
-            {
-                return Problem("Entity set 'DbMarketsContext.Categories'  is null.");
-            }
             var category = await _context.Categories.FindAsync(id);
-            if (category != null)
-            {
-                _context.Categories.Remove(category);
-            }
-            
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
+            _notyfService.Success("Xóa thành công");
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoryExists(int id)
         {
-          return (_context.Categories?.Any(e => e.CatId == id)).GetValueOrDefault();
+            return _context.Categories.Any(e => e.CatId == id);
         }
     }
 }

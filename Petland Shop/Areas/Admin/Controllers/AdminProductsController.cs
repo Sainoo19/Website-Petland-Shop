@@ -158,30 +158,19 @@ namespace Petland_Shop.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-           
 
             if (ModelState.IsValid)
             {
                 try
                 {
                     product.ProductName = Utilities.ToTitleCase(product.ProductName);
-
                     if (fThumb != null)
                     {
                         string extension = Path.GetExtension(fThumb.FileName);
                         string image = Utilities.SEOUrl(product.ProductName) + extension;
                         product.Thumb = await Utilities.UploadFile(fThumb, @"products", image.ToLower());
                     }
-                    if (string.IsNullOrEmpty(product.Thumb))
-                    {
-                        ViewBag.PreviousThumbUrl = "/images/products/" + product.Thumb;
-                    }
-                    else
-                    {
-                        // Đặt một hình ảnh mặc định (nếu muốn)
-                        ViewBag.PreviousThumbUrl = "/images/products/default.png"; // Đường dẫn tương đối đến hình ảnh mặc định trong thư mục "images"
-                    }
-
+                    if (string.IsNullOrEmpty(product.Thumb)) product.Thumb = "default.jpg";
                     product.Alias = Utilities.SEOUrl(product.ProductName);
                     product.DateModified = DateTime.Now;
 
