@@ -6,5 +6,7 @@ namespace Petland_Shop.ModelViews
     {
         public Category category { get; set; }
         public List<Product> lsProducts { get; set; }
+
+        public List<Product> lsBestSeller { get; set; }
     }
 }

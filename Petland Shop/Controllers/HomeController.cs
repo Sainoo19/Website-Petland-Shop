@@ -28,6 +28,11 @@ namespace Petland_Shop.Controllers
                 .OrderByDescending(x => x.DateCreated)
                 .ToList();
 
+            var lsBestSeller = _context.Products.AsNoTracking()
+               .Where(x => x.Active == true && x.HomeFlag == true && x.BestSellers == true)
+               .OrderByDescending(x => x.DateCreated)
+               .ToList();
+
             List<ProductHomeVM> lsProductViews = new List<ProductHomeVM>();
             var lsCats = _context.Categories
                 .AsNoTracking()
@@ -35,11 +40,14 @@ namespace Petland_Shop.Controllers
                 .OrderByDescending(x => x.Ordering)
                 .ToList();
 
+           
+
             foreach (var item in lsCats)
             {
                 ProductHomeVM productHome = new ProductHomeVM();
                 productHome.category = item;
                 productHome.lsProducts = lsProducts.Where(x => x.CatId == item.CatId).ToList();
+                productHome.lsBestSeller = lsBestSeller.Where(x => x.CatId == item.CatId).ToList();
                 lsProductViews.Add(productHome);
 
                 var quangcao = _context.QuangCaos
