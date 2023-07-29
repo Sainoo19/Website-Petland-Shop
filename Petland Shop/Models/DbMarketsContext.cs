@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Petland_Shop.ModelViews;
 
 namespace Petland_Shop.Models;
 
@@ -276,4 +277,8 @@ public partial class DbMarketsContext : DbContext
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+    public DbSet<Petland_Shop.ModelViews.RegisterViewModel>? RegisterViewModel { get; set; }
+
+    public DbSet<Petland_Shop.ModelViews.LoginViewModel>? LoginViewModel { get; set; }
 }
