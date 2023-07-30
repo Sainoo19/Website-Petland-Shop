@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pC6QpNaWYdIdhZVN++Ozl8mIVjMn2BvNmgWqYZhRGFI=",
+  "Hash": "f4HVox6Fj3jeBvlwHhL4OabXZaALmQ861dMC7ms/zOI=",
   "Source": "Petland Shop",
   "BasePath": "_content/Petland Shop",
   "Mode": "Default",
@@ -42721,6 +42721,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\hat-cho-meo-whiskas-1kg.jfif"
     },
     {
+      "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\pate-cho-cho-meo.jfif",
+      "SourceId": "Petland Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\",
+      "BasePath": "_content/Petland Shop",
+      "RelativePath": "images/products/pate-cho-cho-meo.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\pate-cho-cho-meo.jfif"
+    },
+    {
       "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\pate-cho-meo-500gr.jfif",
       "SourceId": "Petland Shop",
       "SourceType": "Discovered",
@@ -42738,6 +42755,23 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\pate-cho-meo-500gr.jfif"
     },
     {
+      "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\pate-cho-meo-500gr.png",
+      "SourceId": "Petland Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\",
+      "BasePath": "_content/Petland Shop",
+      "RelativePath": "images/products/pate-cho-meo-500gr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\pate-cho-meo-500gr.png"
+    },
+    {
       "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\vong-co-meo.jfif",
       "SourceId": "Petland Shop",
       "SourceType": "Discovered",
@@ -42753,6 +42787,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\vong-co-meo.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\vong-co-meo.png",
+      "SourceId": "Petland Shop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\",
+      "BasePath": "_content/Petland Shop",
+      "RelativePath": "images/products/vong-co-meo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\vong-co-meo.png"
     },
     {
       "Identity": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\wwwroot\\images\\products\\xuc-xich.jfif",
