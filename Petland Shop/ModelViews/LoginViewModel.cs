@@ -6,9 +6,9 @@ namespace Petland_Shop.ModelViews
     {
         [Key]
         [MaxLength(100)]
-        [Required(ErrorMessage = ("Vui lòng nhập Username"))]
-        [Display(Name = "Username")]
-        [EmailAddress(ErrorMessage = "Sai định dạng Username")]
+        [Required(ErrorMessage = ("Vui lòng nhập Email"))]
+        [Display(Name = "Địa chỉ Email")]
+        [EmailAddress(ErrorMessage = "Sai định dạng Email")]
         public string UserName { get; set; }
 
         [Display(Name = "Mật khẩu")]

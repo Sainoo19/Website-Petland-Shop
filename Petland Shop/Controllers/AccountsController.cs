@@ -1,19 +1,27 @@
-﻿using AspNetCoreHero.ToastNotification.Abstractions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Petland_Shop.Helpper;
 using Petland_Shop.Models;
 using Petland_Shop.ModelViews;
-using System.Security.Claims;
 using Petland_Shop.Extension;
 
-namespace Petland_Shop.Controllers
+
+// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace WebShop.Controllers
 {
+    [Authorize]
     public class AccountsController : Controller
     {
-
         private readonly DbMarketsContext _context;
         public INotyfService _notyfService { get; }
         public AccountsController(DbMarketsContext context, INotyfService notyfService)
@@ -142,8 +150,8 @@ namespace Petland_Shop.Controllers
         }
         [AllowAnonymous]
         [Route("dang-nhap.html", Name = "DangNhap")]
-        public IActionResult Login(string returnUrl = null)
-        {
+        public IActionResult Login()
+        {   //string returnUrl = null
             var taikhoanID = HttpContext.Session.GetString("CustomerId");
             if (taikhoanID != null)
             {
@@ -154,10 +162,11 @@ namespace Petland_Shop.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("dang-nhap.html", Name = "DangNhap")]
-        public async Task<IActionResult> Login(LoginViewModel customer, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel customer)
         {
             try
             {
+                var errors = ModelState.Values.SelectMany(v => v.Errors);
                 if (ModelState.IsValid)
                 {
                     bool isEmail = Utilities.IsValidEmail(customer.UserName);
@@ -192,16 +201,16 @@ namespace Petland_Shop.Controllers
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                     await HttpContext.SignInAsync(claimsPrincipal);
-                    return RedirectToAction("Dashboard", "Accounts");
                     _notyfService.Success("Đăng nhập thành công");
-                    if (string.IsNullOrEmpty(returnUrl))
-                    {
-                        return RedirectToAction("Dashboard", "Accounts");
-                    }
-                    else
-                    {
-                        return Redirect(returnUrl);
-                    }
+                    return RedirectToAction("Dashboard", "Accounts");
+                    //if (string.IsNullOrEmpty(returnUrl))
+                    //{
+                    //    return RedirectToAction("Dashboard", "Accounts");
+                    //}
+                    //else
+                    //{
+                    //    return Redirect(returnUrl);
+                    //}
                 }
             }
             catch
@@ -210,8 +219,6 @@ namespace Petland_Shop.Controllers
             }
             return View(customer);
         }
-
-
         [HttpGet]
         [Route("dang-xuat.html", Name = "DangXuat")]
         public IActionResult Logout()
