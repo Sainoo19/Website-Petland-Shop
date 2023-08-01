@@ -58,8 +58,8 @@
                                     <option value="product-item-4">Product Item 04</option>
                                     <option value="product-item-5">Product Item 05</option>
                                 </select>
-                                <input class="input-field" type="text" placeholder="Search Products">
-                                <button class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
+                                <input id="keyword" name="keyword" type="text" class="input-field"  placeholder="Search Products">
+                                <button id="keyword" name="keyword" class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
                             </form>
                         </div>
                         <div class="header-right">
@@ -129,7 +129,7 @@
                                         <a asp-controller="Home" asp-action="Contact">Contact</a>
                                     </li>
                                     <li>
-                                        <a asp-controller="Admin" asp-action="Index">Admin</a>
+                                        <a href="/Admin/login.html">Admin</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -475,3 +475,27 @@
     <div class="global-overlay"></div>
 </header>
 <!-- Main Header Area End Here -->
+@section Scripts{
+    <script>
+
+            $("#keyword").keyup(function () {
+                var strkeyword = $('#keyword').val();
+                $.ajax({
+                    url: 'Search/FindProduct/',
+                    datatype: "json",
+                    type: "POST",
+                    data: { keyword: strkeyword },
+                    async: true,
+                    success: function (results) {
+                        $("#records_table").html("");
+                        $("#records_table").html(results);
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
+                });
+            });
+        });
+    </script>
+
+}

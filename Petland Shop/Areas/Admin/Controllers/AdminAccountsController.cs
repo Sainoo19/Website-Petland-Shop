@@ -2,27 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Petland_Shop.Models;
+using Petland_Shop.Areas.Admin.Models;
+using Petland_Shop.Extension;
+using Petland_Shop.Helpper;
 using Petland_Shop.Models;
 
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminAccountsController : Controller
     {
         private readonly DbMarketsContext _context;
-
-        public AdminAccountsController(DbMarketsContext context)
+        public INotyfService _notyfService { get; }
+        public AdminAccountsController(DbMarketsContext context, INotyfService notyfService)
         {
             _context = context;
+            _notyfService = notyfService;
         }
 
         // GET: Admin/AdminAccounts
+
         public async Task<IActionResult> Index()
         {
-
             ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "Description");
             List<SelectListItem> lsTrangThai = new List<SelectListItem>();
             lsTrangThai.Add(new SelectListItem() { Text = "Hoạt động", Value = "1" });
@@ -38,7 +47,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminAccounts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Accounts == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -57,7 +66,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
         // GET: Admin/AdminAccounts/Create
         public IActionResult Create()
         {
-            ViewData["RoleId"] = new SelectList(_context.Roles, "RoleId", "RoleId");
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "RoleName");
             return View();
         }
 
@@ -70,18 +79,49 @@ namespace Petland_Shop.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 _context.Add(account);
                 await _context.SaveChangesAsync();
+                _notyfService.Success("Tạo mới tài khoản thành công");
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoleId"] = new SelectList(_context.Roles, "RoleId", "RoleId", account.RoleId);
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "RoleName", account.RoleId);
             return View(account);
+        }
+        //ChangePassword
+        public IActionResult ChangePassword()
+        {
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "RoleName");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var taikhoan = _context.Accounts.AsNoTracking().SingleOrDefault(x => x.Email == model.Email);
+                if (taikhoan == null) return RedirectToAction("Login", "Accounts");
+                var pass = (model.PasswordNow.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                {
+                    string passnew = (model.Password.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                    taikhoan.Password = passnew;
+                    taikhoan.LastLogin = DateTime.Now;
+                    _context.Update(taikhoan);
+                    _context.SaveChanges();
+                    _notyfService.Success("Đổi mật khẩu thành công");
+                    return RedirectToAction("Login", "Accounts", new { Area = "Admin" });
+                }
+            }
+
+
+            return View();
         }
 
         // GET: Admin/AdminAccounts/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Accounts == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -91,7 +131,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["RoleId"] = new SelectList(_context.Roles, "RoleId", "RoleId", account.RoleId);
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "RoleName", account.RoleId);
             return View(account);
         }
 
@@ -127,14 +167,14 @@ namespace Petland_Shop.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RoleId"] = new SelectList(_context.Roles, "RoleId", "RoleId", account.RoleId);
+            ViewData["QuyenTruyCap"] = new SelectList(_context.Roles, "RoleId", "RoleName", account.RoleId);
             return View(account);
         }
 
         // GET: Admin/AdminAccounts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Accounts == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -155,23 +195,17 @@ namespace Petland_Shop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Accounts == null)
-            {
-                return Problem("Entity set 'DbMarketsContext.Accounts'  is null.");
-            }
             var account = await _context.Accounts.FindAsync(id);
-            if (account != null)
-            {
-                _context.Accounts.Remove(account);
-            }
-            
+            _context.Accounts.Remove(account);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool AccountExists(int id)
         {
-          return (_context.Accounts?.Any(e => e.AccountId == id)).GetValueOrDefault();
+            return _context.Accounts.Any(e => e.AccountId == id);
         }
+
     }
+
 }

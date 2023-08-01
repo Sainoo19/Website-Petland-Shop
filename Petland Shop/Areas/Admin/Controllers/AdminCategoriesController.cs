@@ -16,7 +16,7 @@ using Petland_Shop.Models;
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[Authorize]
+    [Authorize(Roles = "Admin")]
     public class AdminCategoriesController : Controller
     {
         private readonly DbMarketsContext _context;

@@ -8,10 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Petland_Shop.Models;
 using AspNetCoreHero.ToastNotification;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminRolesController : Controller
     {
         private readonly DbMarketsContext _context;
