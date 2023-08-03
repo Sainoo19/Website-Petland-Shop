@@ -106,6 +106,7 @@ namespace Petland_Shop.Controllers
                     Customer khachhang = new Customer
                     {
                         FullName = taikhoan.FullName,
+                        Address = taikhoan.Address,
                         Phone = taikhoan.Phone.Trim().ToLower(),
                         Email = taikhoan.Email.Trim().ToLower(),
                         Password = (taikhoan.Password + salt.Trim()).ToMD5(),

@@ -12,6 +12,10 @@ namespace Petland_Shop.ModelViews
         [Required(ErrorMessage = "Vui lòng nhập Họ Tên")]
         public string FullName { get; set; }
 
+        [Display(Name = "Địa Chỉ")]
+        [Required(ErrorMessage = "Vui lòng nhập Địa Chỉ")]
+        public string Address { get; set; }
+
         [MaxLength(150)]
         [Required(ErrorMessage = "Vui lòng nhập Email")]
         [DataType(DataType.EmailAddress)]

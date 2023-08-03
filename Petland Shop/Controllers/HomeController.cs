@@ -11,11 +11,13 @@ namespace Petland_Shop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly DbMarketsContext _context;
+        
 
-        public HomeController(ILogger<HomeController> logger, DbMarketsContext context)
+        public HomeController(ILogger<HomeController> logger, DbMarketsContext context )
         {
             _logger = logger;
             _context = context;
+            
         }
 
 
@@ -69,8 +71,10 @@ namespace Petland_Shop.Controllers
         }
 
         [Route("lien-he.html", Name = "Contact")]
-        public IActionResult Contact()
+        public async Task<IActionResult> Contact()
         {
+
+            
             return View();
         }
         [Route("gioi-thieu.html", Name = "About")]

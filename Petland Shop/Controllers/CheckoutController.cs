@@ -98,7 +98,7 @@ namespace Petland_Shop.Controllers
                     //donhang.Ward = model.PhuongXa;
 
                     donhang.OrderDate = DateTime.Now;
-                    donhang.TransactStatusId = 1;//Don hang moi
+                    donhang.TransactStatusId = 4;//Don hang moi
                     donhang.Deleted = false;
                     donhang.Paid = false;
                     //donhang.Note = Utilities.StripHTML(model.Note);

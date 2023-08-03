@@ -15,7 +15,7 @@ namespace Petland_Shop.ModelViews
         public string Phone { get; set; }
         [Required(ErrorMessage = "Địa chỉ nhận hàng")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Vui lòng chọn Tỉnh/Thành")]
+        //[Required(ErrorMessage = "Vui lòng chọn Tỉnh/Thành")]
         //public int TinhThanh { get; set; }
         //[Required(ErrorMessage = "Vui lòng chọn Quận/Huyện")]
         //public int QuanHuyen { get; set; }

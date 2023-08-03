@@ -733,7 +733,6 @@ C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Drawing.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Drawing.Primitives.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Dynamic.Runtime.dll
-C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Formats.Asn1.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Globalization.Calendars.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Globalization.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Globalization.Extensions.dll
@@ -822,7 +821,6 @@ C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Security.SecureString.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.ServiceModel.Web.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.ServiceProcess.dll
-C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Text.Encoding.CodePages.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Text.Encoding.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Text.Encoding.Extensions.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\refs\System.Text.RegularExpressions.dll
@@ -1114,3 +1112,11 @@ C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\MailKit.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\MimeKit.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\System.Formats.Asn1.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\MR. LAM\OneDrive - VLG\Documents\Ky Thuat Phan Mem\Website-Petland-Shop\Petland Shop\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

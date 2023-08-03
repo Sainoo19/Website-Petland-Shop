@@ -2,7 +2,9 @@ using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Notyf.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Petland_Shop;
 using Petland_Shop.Models;
+using System.Configuration;
 using System.Text.Encodings.Web;
 using System.Text.Unicode;
 
@@ -21,10 +23,13 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                 {
                     p.Cookie.Name = "UserLoginCookie";
                     p.ExpireTimeSpan = TimeSpan.FromDays(1);
-                    //p.LoginPath = "/dang-nhap.html";
+                    p.LoginPath = "/Admin/login.html";
                     //p.LogoutPath = "/dang-xuat/html";
                     p.AccessDeniedPath = "/not-found.html";
                 });
+//builder.Services.AddTransient<IEmailSender, EmailSender>();
+//builder.Services.Configure<AuthMessageSenderOptions>(Configuration);
+//builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection(nameof(EmailSettings)));
 
 
 var app = builder.Build();

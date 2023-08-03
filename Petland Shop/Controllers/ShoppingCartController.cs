@@ -82,6 +82,8 @@ namespace Petland_Shop.Controllers
                     }
                     //Luu lai session
                     HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
+                    _notyfService.Success("Thêm sản phẩm thành công");
+
                 }
                 return Json(new { success = true });
             }
