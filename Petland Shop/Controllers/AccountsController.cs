@@ -179,7 +179,7 @@ namespace Petland_Shop.Controllers
                     string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
                     if (khachhang.Password != pass)
                     {
-                        _notyfService.Success("Thông tin đăng nhập chưa chính xác");
+                        _notyfService.Warning("Thông tin đăng nhập chưa chính xác");
                         return View(customer);
                     }
                     //kiem tra xem account co bi disable hay khong
@@ -231,6 +231,40 @@ namespace Petland_Shop.Controllers
 
         [HttpPost]
         public IActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            try
+            {
+                var taikhoanID = HttpContext.Session.GetString("CustomerId");
+                if (taikhoanID == null)
+                {
+                    return RedirectToAction("Login", "Accounts");
+                }
+                if (ModelState.IsValid)
+                {
+                    var taikhoan = _context.Customers.Find(Convert.ToInt32(taikhoanID));
+                    if (taikhoan == null) return RedirectToAction("Login", "Accounts");
+                    var pass = (model.PasswordNow.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                    {
+                        string passnew = (model.Password.Trim() + taikhoan.Salt.Trim()).ToMD5();
+                        taikhoan.Password = passnew;
+                        _context.Update(taikhoan);
+                        _context.SaveChanges();
+                        _notyfService.Success("Đổi mật khẩu thành công");
+                        return RedirectToAction("Dashboard", "Accounts");
+                    }
+                }
+            }
+            catch
+            {
+                _notyfService.Success("Thay đổi mật khẩu không thành công");
+                return RedirectToAction("Dashboard", "Accounts");
+            }
+            _notyfService.Success("Thay đổi mật khẩu không thành công");
+            return RedirectToAction("Dashboard", "Accounts");
+        }
+
+        [HttpPost]
+        public IActionResult ChangeAccountDetail(ChangePasswordViewModel model)
         {
             try
             {

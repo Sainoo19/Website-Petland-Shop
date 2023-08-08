@@ -28,7 +28,24 @@
     <div class="shop-area section-space-y-axis-100">
         <div class="container" >
             <div class="row">
-              
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-affix m-v-10">
+                                <i class="prefix-icon anticon anticon-search opacity-04"></i>
+                                <input id="keyword" name="keyword" type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-affix m-v-10">
+                                <select class="custom-select" id="txtCatID" name="txtCatID" style="min-width: 200px;" asp-items="ViewBag.DanhMuc">
+                                    <option selected>Chọn danh mục</option>
+                                    <option value="0">Chọn tất cả</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-15 order-lg-2 order-1">
                     <div class="product-topbar">
                         <ul>
@@ -164,7 +181,7 @@
                     .removeAttr('selected');
                 $("#txtCatID > [value=" + catID + "]").attr("selected", "true");
                 $.ajax({
-                    url: 'Filtter',
+                    url: '/Product/Filtter',
                     datatype: "json",
                     type: "GET",
                     data: {

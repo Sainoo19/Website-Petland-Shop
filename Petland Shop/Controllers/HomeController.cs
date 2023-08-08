@@ -4,6 +4,9 @@ using Petland_Shop.Models;
 using System.Diagnostics;
 
 using Petland_Shop.ModelViews;
+using MailKit;
+using MimeKit;
+using System.Net.Mail;
 
 namespace Petland_Shop.Controllers
 {
@@ -71,12 +74,20 @@ namespace Petland_Shop.Controllers
         }
 
         [Route("lien-he.html", Name = "Contact")]
-        public async Task<IActionResult> Contact()
-        {
-
-            
+        public IActionResult Contact()
+        {   
             return View();
         }
+
+        //[HttpPost]
+        //[Route("lien-he.html", Name = "Contact")]
+        //public IActionResult Contact(ContactViewModel formdata)
+        //{
+        //    using (var client = new SmtpClient())
+        //    {
+        //        client.Connect("smtp@gmail.com");
+        //    }
+        //}
         [Route("gioi-thieu.html", Name = "About")]
         public IActionResult About()
         {

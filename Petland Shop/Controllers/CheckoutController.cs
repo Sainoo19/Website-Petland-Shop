@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,6 +18,7 @@ using Petland_Shop.ModelViews;
 
 namespace Petland_Shop.Controllers
 {
+    [Authorize]
     public class CheckoutController : Controller
     {
         private readonly DbMarketsContext _context;

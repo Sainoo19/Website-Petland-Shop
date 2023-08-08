@@ -19,7 +19,7 @@ namespace Petland_Shop.Controllers
             _context = context;
         }
         [Route("shop.html", Name = ("ShopProduct"))]
-        public IActionResult Index(int? page)
+        public IActionResult Index(int? page, int CatID = 0)
         {
             try
             {
@@ -27,17 +27,33 @@ namespace Petland_Shop.Controllers
                 var pageSize = 10;
                 var lsTinDangs = _context.Products
                     .AsNoTracking()
+                    .Include(x => x.Cat)
                     .OrderBy(x => x.DateCreated);
+                if (CatID != 0)
+                {
+                     lsTinDangs = _context.Products
+                    .AsNoTracking()
+                    .Where(x => x.CatId == CatID)
+                    .Include(x => x.Cat)
+                    .OrderBy(x => x.DateCreated);
+                }
+                else {
+                    lsTinDangs = _context.Products
+                    .AsNoTracking()
+                    .Include(x => x.Cat)
+                    .OrderBy(x => x.DateCreated);
+                }
                 PagedList<Product> models = new PagedList<Product>(lsTinDangs, pageNumber, pageSize);
 
                 ViewBag.CurrentPage = pageNumber;
+                ViewData["DanhMuc"] = new SelectList(_context.Categories, "CatId", "CatName");
                 return View(models);
             }
             catch
             {
                 return RedirectToAction("Index", "Home");
             }
-
+            
 
         }
         [Route("danhmuc/{Alias}", Name = ("ListProduct"))]
@@ -90,6 +106,16 @@ namespace Petland_Shop.Controllers
             }
 
 
+        }
+
+        public IActionResult Filtter(int CatId = 0)
+        {
+            var url = $"shop.html?CatID={CatId}";
+            if (CatId == 0)
+            {
+                url = $"shop.html";
+            }
+            return Json(new { status = "success", redirectUrl = url });
         }
 
     }
