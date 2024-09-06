@@ -25,7 +25,7 @@ namespace Petland_Shop.Controllers
             {
                 var pageNumber = page == null || page <= 0 ? 1 : page.Value;
                 var pageSize = 10;
-                var lsTinDangs = _context.Products
+                var lsTinDangs =  _context.Products
                     .AsNoTracking()
                     .Include(x => x.Cat)
                     .OrderBy(x => x.DateCreated);
@@ -37,12 +37,7 @@ namespace Petland_Shop.Controllers
                     .Include(x => x.Cat)
                     .OrderBy(x => x.DateCreated);
                 }
-                else {
-                    lsTinDangs = _context.Products
-                    .AsNoTracking()
-                    .Include(x => x.Cat)
-                    .OrderBy(x => x.DateCreated);
-                }
+               
                 PagedList<Product> models = new PagedList<Product>(lsTinDangs, pageNumber, pageSize);
 
                 ViewBag.CurrentPage = pageNumber;

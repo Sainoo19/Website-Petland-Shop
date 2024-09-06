@@ -102,7 +102,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
 
 
 
-                    return RedirectToAction("Index", "Home", new { Area = "Admin" });
+                    return RedirectToAction("Index", "AdminProducts", new { Area = "Admin" });
                 }
             }
             catch

@@ -38,8 +38,8 @@
                     <div class="header-top-right text-matterhorn">
                         <p class="shipping mb-0">Free delivery on order over <span>$200</span></p>
                     </div>
-                </div>
-            </div>*@
+                </div>*@
+            </div>
         </div>
     </div>
     <div class="header-middle py-5">
@@ -47,10 +47,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="header-middle-wrap">
-                        <a  class="header-logo">
-                            <img src="~/assets/images/logo/dark.png" alt="Header Logo">
+                        <a class="header-logo">
+                            <img src="~/assets/images/logo/LogoUser.png" alt="Header Logo">
                         </a>
-                        <div class="header-search-area d-none d-lg-block">
+                        @*<div class="header-search-area d-none d-lg-block">
                             <form action="#" class="header-searchbox">
                                 <select class="nice-select select-search-category wide">
                                     <option value="all">All Category</option>
@@ -63,7 +63,7 @@
                                 <input id="keyword" name="keyword" type="text" class="input-field"  placeholder="Search Products">
                                 <button id="keyword" name="keyword" class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
                             </form>
-                        </div>
+                        </div>*@
                         <div class="header-right">
                             <ul>
                                 <li class="dropdown d-none d-md-block">
@@ -83,11 +83,11 @@
                                         }
                                     </ul>
                                 </li>
-                                <li class="d-none d-md-block">
+                               @* <li class="d-none d-md-block">
                                     <a asp-controller="Product" asp-action="WishList">
                                         <i class="pe-7s-like"></i>
                                     </a>
-                                </li>
+                                </li>*@
                                 <li class="d-block d-lg-none">
                                     <a href="#searchBar" class="search-btn toolbar-btn">
                                         <i class="pe-7s-search"></i>
@@ -240,7 +240,7 @@
     <div class="global-overlay"></div>
 </header>
 <!-- Main Header Area End Here -->
-@section Scripts{
+@*@section Scripts{
     <script>
 
             $("#keyword").keyup(function () {
@@ -263,4 +263,4 @@
         });
     </script>
 
-}
+}*@

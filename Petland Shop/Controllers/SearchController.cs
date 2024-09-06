@@ -12,24 +12,27 @@ namespace Petland_Shop.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         //GET: /<controller>/
         [HttpPost]
         public IActionResult FindProduct(string keyword)
         {
-            List<Product> ls = new List<Product>();
+            //var ls = _context.Products.AsNoTracking()
+            //                      .Where(x => x.ProductName.Contains(keyword))
+            //                      .OrderByDescending(x => x.ProductName);
             if (string.IsNullOrEmpty(keyword) || keyword.Length < 1)
             {
                 return PartialView("ListProductsSearchPartial", null);
             }
-            ls = _context.Products.AsNoTracking()
+            var ls = _context.Products.AsNoTracking()
                                   .Where(x => x.ProductName.Contains(keyword))
-                                  .OrderByDescending(x => x.ProductName)
-                                  .ToList();
+                                  .OrderByDescending(x => x.ProductName).ToList();
+
+
             if (ls == null)
             {
                 return PartialView("ListProductsSearchPartial", null);

@@ -16,7 +16,7 @@
                         <h1 class="breadcrumb-heading">Petland Shop</h1>
                         <ul>
                             <li>
-                                <a href="/">Trang chủ <i class="pe-7s-angle-right"></i></a>
+                                <a href="/">Home <i class="pe-7s-angle-right"></i></a>
                             </li>
                             <li>DANH SÁCH SẢN PHẨM</li>
                         </ul>
@@ -70,7 +70,7 @@
                     @*Do san pham tu database vao trang*@
                     <div class="tab-content text-charcoal pt-8">
                         <div class="tab-pane fade" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
-                            <div class="product-grid-view row">
+                            <div id="records_table" class="product-grid-view row">
                                 @if (Model != null && Model.Count() > 0)
                                 {
                                     foreach (var item in Model)
@@ -93,8 +93,8 @@
                                                 </div>
                                                 <div class="product-content">
                                                     <a class="product-name" href="@url">@item.ProductName</a>
-                                                    <div class="price-box pb-1">
-                                                        <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
+                                                    <div class="price-box pb-1" >
+                                                        <span class="new-price" style="color:blue">@item.Price.Value.ToString("#,##0") VNĐ</span>
                                                     </div>
                                                     @*<div class="rating-box">
                                                         <ul>
@@ -160,6 +160,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="pagination-area pt-10">
                         <ul class="pagination justify-content-center">
                             <pager class="pager-container" list="@Model" options="@PagedListRenderOptions.Bootstrap4PageNumbersOnly" asp-area="" asp-controller="Product" asp-action="Index" />
@@ -171,6 +172,10 @@
     </div>
 </main>
 <!-- Main Content Area End Here -->
+
+
+
+
 @section Scripts{
     <script>
         $(document).ready(function () {
@@ -202,7 +207,7 @@
             $("#keyword").keyup(function () {
                 var strkeyword = $('#keyword').val();
                 $.ajax({
-                    url: 'Search/FindProduct/',
+                    url: '/Search/FindProduct/',
                     datatype: "json",
                     type: "POST",
                     data: { keyword: strkeyword },

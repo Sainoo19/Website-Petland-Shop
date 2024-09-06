@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bkDWSqKUUDarDcbrd79bOnKSXPmjwAjVmOAGAeUR/rQRPDBJcJZ5qUeIFp1ETxHypi9PQWHUCCNMRq0dApF7PQ==",
+  "dgSpecHash": "zDwcGcvvkx7hjHZxMMunP0McQSkZHw8NMFpw5aQb3YgLIaixMwcL0225xlnwprEaMQ65aFdPMk0krH/KZWEETA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
+  "projectFilePath": "C:\\Users\\MR. LAM\\OneDrive - VLG\\Documents\\Ky Thuat Phan Mem\\Do An 2\\Website-Petland-Shop\\Petland Shop\\Petland Shop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MR. LAM\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
     "C:\\Users\\MR. LAM\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

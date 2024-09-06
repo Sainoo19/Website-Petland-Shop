@@ -4,9 +4,8 @@ using Petland_Shop.Models;
 using System.Diagnostics;
 
 using Petland_Shop.ModelViews;
-using MailKit;
 using MimeKit;
-using System.Net.Mail;
+using MailKit.Net.Smtp;
 
 namespace Petland_Shop.Controllers
 {
@@ -75,19 +74,39 @@ namespace Petland_Shop.Controllers
 
         [Route("lien-he.html", Name = "Contact")]
         public IActionResult Contact()
-        {   
+        {
             return View();
         }
 
-        //[HttpPost]
-        //[Route("lien-he.html", Name = "Contact")]
-        //public IActionResult Contact(ContactViewModel formdata)
-        //{
-        //    using (var client = new SmtpClient())
-        //    {
-        //        client.Connect("smtp@gmail.com");
-        //    }
-        //}
+        [HttpPost]
+        [Route("lien-he.html", Name = "Contact")]
+        public IActionResult Contact(ContactViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress(model.Name, model.Email));
+                message.To.Add(new MailboxAddress("Trung", "nvtrung19.work@gmail.com"));
+                message.Subject = "New Contact Form PetlandShop";
+
+                var bodyBuilder = new BodyBuilder();
+                bodyBuilder.TextBody = $"Name: {model.Name}\nEmail: {model.Email}\n\n{model.Note}";
+                message.Body = bodyBuilder.ToMessageBody();
+
+                using (var client = new SmtpClient())
+                {
+                    client.Connect("smtp.gmail.com", 587, false); // SMTP server details
+                    client.Authenticate("nvtrung19.work@gmail.com", "vhnnwsbmphzwcvrt"); // Your email login credentials
+
+                    client.Send(message);
+                    client.Disconnect(true);
+                }
+
+                return RedirectToAction("Index", "Home"); // Redirect to a thank you page or something similar
+            }
+
+            return View(model);
+        }
         [Route("gioi-thieu.html", Name = "About")]
         public IActionResult About()
         {

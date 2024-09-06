@@ -18,7 +18,7 @@ using Petland_Shop.ModelViews;
 
 namespace Petland_Shop.Controllers
 {
-    [Authorize]
+    
     public class CheckoutController : Controller
     {
         private readonly DbMarketsContext _context;

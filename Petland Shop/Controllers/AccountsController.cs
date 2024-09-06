@@ -259,7 +259,7 @@ namespace Petland_Shop.Controllers
                 _notyfService.Success("Thay đổi mật khẩu không thành công");
                 return RedirectToAction("Dashboard", "Accounts");
             }
-            _notyfService.Success("Thay đổi mật khẩu không thành công");
+            _notyfService.Warning("Thay đổi mật khẩu không thành công");
             return RedirectToAction("Dashboard", "Accounts");
         }
 
@@ -290,10 +290,10 @@ namespace Petland_Shop.Controllers
             }
             catch
             {
-                _notyfService.Success("Thay đổi mật khẩu không thành công");
+                _notyfService.Warning("Thay đổi mật khẩu không thành công");
                 return RedirectToAction("Dashboard", "Accounts");
             }
-            _notyfService.Success("Thay đổi mật khẩu không thành công");
+            _notyfService.Warning("Thay đổi mật khẩu không thành công");
             return RedirectToAction("Dashboard", "Accounts");
         }
     }
