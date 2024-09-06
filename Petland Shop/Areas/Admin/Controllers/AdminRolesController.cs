@@ -2,29 +2,40 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Petland_Shop.Models;
+using AspNetCoreHero.ToastNotification;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Petland_Shop.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminRolesController : Controller
     {
         private readonly DbMarketsContext _context;
+        //public INotyfService _notifyService { get; }
+        private readonly INotyfService _notifyService;
 
-        public AdminRolesController(DbMarketsContext context)
+        public AdminRolesController(DbMarketsContext context, INotyfService notifyService)
         {
             _context = context;
+            _notifyService = notifyService;
         }
 
         // GET: Admin/AdminRoles
         public async Task<IActionResult> Index()
         {
-              return _context.Roles != null ? 
+
+
+            return _context.Roles != null ? 
                           View(await _context.Roles.ToListAsync()) :
                           Problem("Entity set 'DbMarketsContext.Roles'  is null.");
+           
         }
 
         // GET: Admin/AdminRoles/Details/5
@@ -62,6 +73,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
             {
                 _context.Add(role);
                 await _context.SaveChangesAsync();
+                _notifyService.Success("Them Thanh Cong");
                 return RedirectToAction(nameof(Index));
             }
             return View(role);
@@ -101,11 +113,13 @@ namespace Petland_Shop.Areas.Admin.Controllers
                 {
                     _context.Update(role);
                     await _context.SaveChangesAsync();
+                    _notifyService.Success("Cap Nhat Thanh Cong");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!RoleExists(role.RoleId))
                     {
+                        _notifyService.Error("Co loi xay ra");
                         return NotFound();
                     }
                     else
@@ -152,6 +166,7 @@ namespace Petland_Shop.Areas.Admin.Controllers
             }
             
             await _context.SaveChangesAsync();
+            _notifyService.Success("Xoa Thanh Cong");
             return RedirectToAction(nameof(Index));
         }
 
